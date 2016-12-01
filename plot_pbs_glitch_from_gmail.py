@@ -45,9 +45,8 @@ def main():
                         body += payload.get_payload()
                 else:
                     body += msg_from_string.get_payload()
-                print 'msg_from_string[',emailid,']',body
                 notification_records.append(FailureRecord(timestamp=time.mktime(email.utils.parsedate(date)),
-                                                        body=body))
+                                                          body=body))
             else:
                 continue
         dumpToPickle(filename=cache_filename, obj=notification_records)
