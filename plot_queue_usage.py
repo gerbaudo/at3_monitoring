@@ -22,7 +22,7 @@ import glob
 import os
 import random
 import re
-import rrdtool
+# import rrdtool
 import subprocess
 import time
 import ROOT as R
@@ -148,7 +148,7 @@ def main():
     can_daily.Update()
     can_daily.SaveAs('at3_daily.png')
 
-    
+    return
     # try with rrdtool (not working)    
     rrdtool.create(rrd_filename,
                    '--start', "%d" % (first_time - 1), #seconds since epoch
